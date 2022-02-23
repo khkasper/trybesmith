@@ -2,7 +2,7 @@ import { ResultSetHeader } from 'mysql2';
 import connection from './connection';
 import { IUser, IUserWithId } from '../interfaces/User';
 
-const create = async (userInfo: IUser): Promise<IUser> => {
+const create = async (userInfo: IUser): Promise<IUserWithId> => {
   const { username, classe, level, password } = userInfo;
   const query = `
     INSERT INTO Trybesmith.Users (username, classe, level, password)

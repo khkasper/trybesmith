@@ -6,6 +6,4 @@ const create = async (userInfo: IUser): Promise<IUserWithId> => {
   return user as IUserWithId;
 };
 
-export default {
-  create,
-};
+export default { create };
