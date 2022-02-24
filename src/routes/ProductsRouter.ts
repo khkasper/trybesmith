@@ -1,16 +1,22 @@
 import { Router } from 'express';
-import ProductsController from '../controllers/ProductsController';
-import authValidation from '../middlewares/authValidation';
+import {
+  create as ProductsCreate,
+  getAll as ProductsGetAll,
+} from '../controllers/ProductsController';
 import { validateName, validateAmount } from '../middlewares/productsValidations';
 
 const productsRouter = Router();
 
 productsRouter.post(
   '/',
-  authValidation,
   validateName,
   validateAmount,
-  ProductsController.create,
+  ProductsCreate,
+);
+
+productsRouter.get(
+  '/',
+  ProductsGetAll,
 );
 
 export default productsRouter;

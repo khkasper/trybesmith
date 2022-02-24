@@ -3,7 +3,7 @@ import verifyToken from '../utils/verifyToken';
 import StatusCodes from '../enums/StatusCodes';
 import StatusMessages from '../enums/StatusMessages';
 
-const authValidation = async (req: Request, res: Response, next: NextFunction) => {
+const authValidations = async (req: Request, res: Response, next: NextFunction) => {
   const { authorization } = req.headers;
 
   if (!authorization) {
@@ -19,4 +19,4 @@ const authValidation = async (req: Request, res: Response, next: NextFunction) =
   return next();
 };
 
-export default authValidation;
+export default authValidations;
