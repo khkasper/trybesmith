@@ -16,6 +16,9 @@ const authValidations = async (req: Request, res: Response, next: NextFunction) 
     return res.status(StatusCodes.UNAUTHORIZED).json({ error: StatusMessages.invalidToken });
   }
 
+  const { id } = verifiedToken;
+  req.body = { ...req.body, userId: id };
+
   return next();
 };
 

@@ -25,7 +25,7 @@ enum StatusMessages {
 
   productsRequired = 'Products is required',
   productsArray = 'Products must be an array of numbers',
-  productsEmpty = 'Products Products cant be empty',
+  productsEmpty = 'Products can\'t be empty',
 
   invalidToken = 'Invalid token',
   tokenNotFound = 'Token not found',
