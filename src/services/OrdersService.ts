@@ -1,9 +1,8 @@
 import OrdersModel from '../models/OrdersModel';
-import { IUserProducts, IIdOrdersOrder } from '../interfaces/Orders';
+import { IUserIdProducts, IIdOrdersOrder } from '../interfaces/Orders';
 
-const create = async ({ userId, products }: IUserProducts): Promise<IIdOrdersOrder> => {
-  const id = await OrdersModel.create(userId);
-  const orders = { id, orders: { order: { userId, products } } };
+const create = async (userIdProducts: IUserIdProducts): Promise<IIdOrdersOrder> => {
+  const orders = await OrdersModel.create(userIdProducts);
   return orders;
 };
 

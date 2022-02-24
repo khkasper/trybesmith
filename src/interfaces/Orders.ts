@@ -1,4 +1,4 @@
-export interface IUserProducts {
+export interface IUserIdProducts {
   userId: number,
   products: number[],
 }

@@ -4,7 +4,7 @@ import StatusCodes from '../enums/StatusCodes';
 import UserService from '../services/UserService';
 import generateToken from '../utils/generateToken';
 
-const create = async (req: Request, res: Response) => {
+const create = async (req: Request, res: Response): Promise<Response> => {
   const userInfo: IUser = req.body;
   const user: IUserWithId = await UserService.create(userInfo);
   const newUser: IUserToken = { id: user.id, username: user.username };
